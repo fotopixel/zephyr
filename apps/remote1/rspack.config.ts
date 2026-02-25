@@ -4,11 +4,12 @@ import {
   NxModuleFederationPlugin,
   NxModuleFederationDevServerPlugin,
 } from '@nx/module-federation/rspack.js';
-import { join } from 'path';
+import { withZephyr } from 'zephyr-rspack-plugin';
+import { join } from 'node:path';
 
 import config from './module-federation.config';
 
-export default {
+export default withZephyr()({
   output: {
     path: join(__dirname, '../../dist/apps/remote1'),
     publicPath: 'auto',
@@ -43,4 +44,4 @@ export default {
     new NxModuleFederationPlugin({ config }, { dts: false }),
     new NxModuleFederationDevServerPlugin({ config }),
   ],
-};
+});

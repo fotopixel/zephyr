@@ -59,6 +59,7 @@
     "@emotion/styled": "11.14.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "6.30.3"
+    "react-router-dom": "6.30.3",
+    "zephyr-rspack-plugin": "^0.1.13"
   }
 }
