@@ -1,6 +1,6 @@
 import { ModuleFederationConfig } from '@nx/module-federation';
 
-const EAGER_PACKAGES = ['react', 'react-dom', 'react-router', 'react-router-dom'];
+const EAGER_PACKAGES = new Set(['react', 'react-dom', 'react-router', 'react-router-dom']);
 
 const config: ModuleFederationConfig = {
   name: 'remote2',
@@ -8,7 +8,7 @@ const config: ModuleFederationConfig = {
     './Module': './src/remote-entry.ts',
   },
   shared: (libraryName, sharedConfig) => {
-    if (EAGER_PACKAGES.includes(libraryName)) {
+    if (EAGER_PACKAGES.has(libraryName)) {
       return { ...sharedConfig, eager: false };
     }
     return sharedConfig;
