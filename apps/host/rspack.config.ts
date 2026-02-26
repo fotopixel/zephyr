@@ -11,6 +11,7 @@ import config from './module-federation.config';
 
 
 export default withZephyr()({
+  ignoreWarnings: [/Failed to parse source map/],
   output: {
     path: join(__dirname, '../../dist/apps/host'),
     publicPath: 'auto',
