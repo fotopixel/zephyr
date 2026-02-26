@@ -1,8 +1,9 @@
 {
     "name": "host",
-    "version": "0.0.0",
+    "version": "0.0.1",
+    "private": true,
     "zephyr:dependencies": {
-        "remote1": "remote1.zephyr.fotopixel@latest",
-        "remote2": "remote2.zephyr.fotopixel@latest"
+        "remote1": "fotopixel:remote1@*",
+        "remote2": "fotopixel:remote2@*"
     }
 }
