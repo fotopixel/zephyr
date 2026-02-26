@@ -13,6 +13,9 @@ permissions:
 jobs:
   main:
     runs-on: ubuntu-latest
+    env:
+      ZE_SERVER_TOKEN: ${{ secrets.ZEPHYR_AUTH_TOKEN }}
+      ZE_USER_EMAIL: ${{ secrets.ZE_USER_EMAIL }}
     steps:
       - uses: actions/checkout@v4
         with:
